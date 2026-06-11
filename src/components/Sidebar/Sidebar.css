@@ -1,0 +1,257 @@
+/* Manager Panel Layout */
+.manager-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #0a0a1a;
+}
+
+/* Manager Sidebar */
+.manager-sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #1a1a2e 0%, #0f0f23 100%);
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 4px 0 20px rgba(0,0,0,0.3);
+  border-right: 1px solid rgba(255,255,255,0.05);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.manager-sidebar-header {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.manager-sidebar-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #b6f300;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.manager-info {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.manager-info span:first-child {
+  font-size: 0.9rem;
+  color: #ccc;
+  word-break: break-all;
+}
+
+.manager-role-badge {
+  background: rgba(182, 243, 0, 0.15);
+  color: #b6f300;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid rgba(182, 243, 0, 0.3);
+}
+
+.permission-count {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: #888;
+  padding: 5px 10px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Sidebar Navigation */
+.manager-sidebar-nav {
+  flex: 1;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow-y: auto;
+}
+
+.manager-sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: #b0b0c0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-left: 3px solid transparent;
+  gap: 12px;
+}
+
+.manager-sidebar-item:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: #ffffff;
+  border-left-color: rgba(59, 130, 246, 0.5);
+}
+
+.manager-sidebar-item.active {
+  background: rgba(182, 243, 0, 0.1);
+  color: #b6f300;
+  border-left-color: #b6f300;
+  font-weight: 600;
+}
+
+.sidebar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  font-size: 1.2rem;
+}
+
+.sidebar-label {
+  flex: 1;
+  white-space: nowrap;
+}
+
+/* No Permissions Message */
+.no-permissions-message {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+  color: #666;
+}
+
+.no-permissions-message svg {
+  margin-bottom: 15px;
+  color: #e94560;
+}
+
+.no-permissions-message p {
+  font-size: 1rem;
+  margin: 5px 0;
+  color: #999;
+}
+
+.no-permissions-message span {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/* Sidebar Footer */
+.manager-sidebar-footer {
+  padding: 15px 20px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-top: auto;
+}
+
+.manager-logout-btn {
+  width: 100%;
+  padding: 10px;
+  background: rgba(233, 69, 96, 0.15);
+  color: #e94560;
+  border: 1px solid rgba(233, 69, 96, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.manager-logout-btn:hover {
+  background: #e94560;
+  color: white;
+}
+
+/* Main Content Area */
+.manager-main-content {
+  flex: 1;
+  margin-left: 260px;
+  min-height: 100vh;
+  background: #0a0a1a;
+}
+
+.manager-top-bar {
+  background: rgba(26, 26, 46, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.manager-user-info {
+  font-size: 0.95rem;
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+.manager-content-container {
+  padding: 30px;
+  color: #e0e0e0;
+}
+
+/* Scrollbar Styling */
+.manager-sidebar::-webkit-scrollbar,
+.manager-sidebar-nav::-webkit-scrollbar {
+  width: 5px;
+}
+
+.manager-sidebar::-webkit-scrollbar-thumb,
+.manager-sidebar-nav::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+}
+
+.manager-sidebar:hover::-webkit-scrollbar-thumb,
+.manager-sidebar-nav:hover::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .manager-sidebar {
+    width: 240px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .manager-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+  
+  .manager-main-content {
+    margin-left: 0;
+  }
+  
+  .manager-content-container {
+    padding: 20px;
+  }
+  
+  .manager-top-bar {
+    padding: 15px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .manager-sidebar {
+    width: 100%;
+  }
+}
